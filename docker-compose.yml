@@ -7,12 +7,12 @@ services:
     ports:
       - "5678:5678"
     environment:
-      - N8N_HOST=localhost
+      - N8N_HOST=0.0.0.0
       - N8N_PORT=5678
       - N8N_PROTOCOL=http
       - NODE_ENV=production
       
-      # Database: Supabase Connection
+      # Database: Supabase Configuration
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_DATABASE=postgres
       - DB_POSTGRESDB_HOST=aws-1-eu-west-1.pooler.supabase.com
@@ -21,8 +21,8 @@ services:
       - DB_POSTGRESDB_PASSWORD=ZXFiY6P#QqM8L+_
       - DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED=false
       
-      # Security
-      - N8N_ENCRYPTION_KEY=geezber_runcode_2026
+      # Security (Required to keep your workflows safe)
+      - N8N_ENCRYPTION_KEY=geezber_clawcloud_2026
     volumes:
       - n8n_data:/home/node/.n8n
 
